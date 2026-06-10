@@ -1,18 +1,18 @@
 {% set name = "flake8-string-format" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flake8-string-format-{{ version }}.tar.gz
-  sha256: 65f3da786a1461ef77fca3780b314edb2853c377f2e35069723348c8917deaa2
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 817431aeed09a9cad28099425b5a2a03d58c10e9460dcf8475d7f923ac10f26a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
